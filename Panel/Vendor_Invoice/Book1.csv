@@ -1,0 +1,2 @@
+inv_date,order_id,total_transaction,market_percentage,market_value,shipping_fee,gateway_fee,per_transaction_fee,total_fees,gst_rate,igst,cgst,sgst,tcs
+12/26/2018,#0000-6,200,12,24,44.55,3.6,0,72.15,18,12.98,0,0,1.94

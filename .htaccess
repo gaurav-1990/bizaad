@@ -1,0 +1,4 @@
+RewriteEngine On    # Turn on the rewriting engine
+RewriteRule ^([\w-]+)/?$ product-final.php?pro_id=$1 [QSA,L]
+RewriteRule ^([\w-]+)/([\w-=]+)/?$ product-list.php?cat_name=$1&catid=$2   [QSA,L] 
+RewriteRule ^([\w-]+)/([\w-]+)/([\w-=]+)/?$ product-details.php?cat_name=$1&sub_name=$2&sub_id=$3 [QSA,L]
