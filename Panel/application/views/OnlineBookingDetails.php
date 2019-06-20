@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <td><?= $booking->pro_name ?> </td>
                                         </tr>
                                         <tr>
-                                            <th>Product Name</th>
+                                            <th>Product Price</th>
                                             <td><?= $booking->dis_price ?> </td>
                                         </tr>
                                         <tr>
@@ -114,7 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <td><?= $booking->address ?> </td>
                                         </tr>
                                         <tr>
-                                            <th>Address</th>
+                                            <th>Pin Code</th>
                                             <td><?= $booking->zip ?> </td>
                                         </tr>
                                     </tbody>

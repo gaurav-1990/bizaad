@@ -17,6 +17,9 @@
 	
 	<link rel="stylesheet"  href="<?= base_url() ?>bootstrap/vendor/datatables/dataTables.bootstrap4.min.css" type="text/css"/>
         <link rel="stylesheet" href="<?= base_url() ?>allmedia/assets/components/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="<?= base_url() ?>allmedia/assets/css/style.css">
+
         <link rel="stylesheet" href="<?= base_url() ?>allmedia/assets/components/jquery-ui-1.12.1/jquery-ui.min.css">
         <!-- <link rel="stylesheet" href="<?= base_url() ?>allmedia/assets/components/jquery-ui-1.12.1/jquery-ui.min.js"> -->
         <link rel="stylesheet" href="<?= base_url() ?>allmedia/assets/components/font-awesome/css/font-awesome.min.css">

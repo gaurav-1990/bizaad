@@ -25,8 +25,17 @@ class Vendor extends CI_Controller {
 	$this->load->view('config/header', array('title' => 'Please add products'));
 	$this->load->view('config/sidebar', array('active' => 'orders', 'action' => ''));
 	//$results = $this->vendor->userOrderByVendor($this->session->userdata('signupSession')['id']);
-	$results = $this->vendor->ZeyauserOrderByVendor($this->session->userdata('signupSession')['id']);
-	$this->load->view('UserOrders', array('results' => $results));
+	if($this->input->post('find')){
+    		$from = $this->input->post('from');
+			$to = $this->input->post('to');
+			$results = $this->vendor->data_search($from,$to);
+			$this->load->view('UserOrders', array('results' => $results));
+
+    	}else{
+    		$results = $this->vendor->ZeyauserOrderByVendor($this->session->userdata('signupSession')['id']);
+			$this->load->view('UserOrders', array('results' => $results));
+    	}
+	
 	$this->load->view('config/footer');
     }
 
@@ -1091,7 +1100,20 @@ EOD;
 	$this->load->view('config/sidebar', array('active' => 'onlinequery', 'action' => 'onlinequery'));
 	$guest_booking = $this->vendor->getOnlineBookings();
 
-	$this->load->view('OnlineBooking', array('booking' => $guest_booking));
+	if($this->input->post('find')){
+    		$from = $this->input->post('from');
+			$to = $this->input->post('to');
+			$results = $this->vendor->search_result($from,$to);
+			// echo "<pre>";
+			// print_r($results);
+			// die;
+			$this->load->view('OnlineBooking', array('booking' => $results));
+
+    	}
+    	else{
+    		//$this->load->view('OnlineBooking');
+    		$this->load->view('OnlineBooking', array('booking' => $guest_booking));
+    	}
 	$this->load->view('config/footer');
     }
 

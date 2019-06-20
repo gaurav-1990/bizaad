@@ -276,4 +276,19 @@ class Vendor_model extends CI_Model {
 		// return $query->result();
 	}
 
+	public function search_result($date1,$date2)
+	{
+		$query = $this->db->select('*,tbl_guest_booking.id as OID')
+		                  ->from('tbl_guest_booking')
+						  ->join('tbl_product', 'tbl_product.id=tbl_guest_booking.product_id')
+						  ->where('tbl_guest_booking.datentime BETWEEN "'. date('Y-m-d 00:00:00', strtotime($date1)). '" and "'. date('Y-m-d 00:00:00', strtotime($date2)).'"')
+						  ->get();
+
+		return	$query->result();
+
+		//return $this->db->select('*,tbl_guest_booking.id as OID')->from('tbl_guest_booking')->join('tbl_product', 'tbl_product.id=tbl_guest_booking.product_id')->get()->result();
+
+		//where('datentime BETWEEN "'. date('Y-m-d 00:00:00', strtotime($date1)). '" and "'. date('Y-m-d 00:00:00', strtotime($date2)).'"')->get('tbl_guest_booking');
+	}
+
 }

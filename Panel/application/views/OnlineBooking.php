@@ -36,7 +36,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="table-responsive">
 
-                                <table class="table table-bordered table-striped table-nowrap no-mb">
+<div class="container withmargin">
+    <!-- <h6>Search the Records Datewise:</h6> -->
+        <?php echo form_open('Vendor/onlineQuery')?>
+        
+            <div class="row">
+                <div class="form-group col-md-2">
+                    <label>FROM</label>
+                    <?php echo form_input(['class'=>'form-control','name'=>'from','id'=>'tripstartdate','autocomplete'=>'off','value'=>set_value('from')]);?>
+                    <!-- <input type="text" id="tripstartdate" class="form-control" name="from"> -->
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label>TO</label>
+                    <?php echo form_input(['class'=>'form-control','name'=>'to','id'=>'trip_closing_date','autocomplete'=>'off','value'=>set_value('to')]);?>
+                    <!-- <input type="text" id="trip_closing_date"  class="form-control" name="to"> -->
+                </div>
+
+                <div class="form-group col-md-1 find">
+                    <?php echo form_submit(['class'=>'btn btn-success','value'=>'FIND', 'name'=>'find']);?>
+                    <!-- <input type="submit" class="form-control btn btn-success" name="submit"> -->
+                </div>
+            </div>
+        <?php echo form_close(); ?>   
+    </div>
+                                
+                                <table id="example" class="table table-bordered table-striped table-nowrap no-mb">
                                     <thead>
                                         <tr>
                                             <th>Payment Sta</th>
